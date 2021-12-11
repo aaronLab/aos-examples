@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Prj9th</string>
+    <string name="apple">Apple</string>
+    <string name="grape">Grape</string>
+    <string name="banana">Banana</string>
+    <string name="press_button_to_check_out">Press button to check out</string>
+</resources>
