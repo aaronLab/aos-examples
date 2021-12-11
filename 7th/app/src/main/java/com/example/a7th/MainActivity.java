@@ -40,9 +40,50 @@ class MyView extends View {
     protected void onDraw(Canvas canvas) {
         @SuppressLint("DrawAllocation") Paint paint = new Paint();
         paint.setTextSize(50);
+        paint.setColor(Color.RED);
+        paint.setStrokeWidth(20);
+        canvas.drawLine(100, 900, 700, 900, paint);
+//        canvas.drawCircle(x, y, 30, paint);
+        canvas.drawCircle(300, 1200, 200, paint);
+//        canvas.drawText(x + "," + y, x, y + 100, paint);
 
-        canvas.drawCircle(x, y, 30, paint);
-        canvas.drawText(x + "," + y, x, y + 100, paint);
+        super.onDraw(canvas);
+    }
+}
+
+class YourView extends View {
+
+    int key;
+    String str;
+    int x, y;
+
+    public MyView(Context context) {
+        super(context);
+
+        setBackgroundColor(Color.YELLOW);
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        x = (int) event.getX();
+        y = (int) event.getY();
+
+        invalidate();
+
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        @SuppressLint("DrawAllocation") Paint paint = new Paint();
+        paint.setTextSize(50);
+        paint.setColor(Color.RED);
+        paint.setStrokeWidth(20);
+        canvas.drawLine(100, 900, 700, 900, paint);
+//        canvas.drawCircle(x, y, 30, paint);
+        canvas.drawCircle(300, 1200, 200, paint);
+//        canvas.drawText(x + "," + y, x, y + 100, paint);
 
         super.onDraw(canvas);
     }
